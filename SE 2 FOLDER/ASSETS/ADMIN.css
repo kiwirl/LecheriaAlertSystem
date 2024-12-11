@@ -1,0 +1,316 @@
+/* Base styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    scroll-behavior: smooth;
+    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+header {
+    background: linear-gradient(45deg, #008000, #32cd32, #00bfff, #008000);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    color: white;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+header img {
+    width: 80px;
+    height: auto;
+}
+
+header div {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+nav {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #80ee80;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+svg {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+        svg path {
+fill: #c7ffc1;
+stroke: #eee;
+stroke-width: .25;
+}
+svg path:hover {
+fill: #006284;
+transition: 0.6s;
+cursor: pointer;
+}
+.controls {
+display: grid;
+grid-template-columns: repeat(4, 1fr); /* Four buttons per row */
+gap: 10px;
+justify-items: center;
+margin: 20px;
+max-width: 100%;
+}
+
+.controls h2 {
+grid-column: span 4; /* Span across all columns to separate sections */
+font-size: 18px;
+color: #333;
+padding: 8px 12px;
+text-align: center;
+background-color: #f1f1f1;
+border-radius: 8px;
+margin: 15px 0;
+}
+
+.controls button {
+background-color: #f1f1f1;
+border: none;
+border-radius: 8px;
+padding: 10px 15px; /* Smaller padding for reduced button size */
+font-size: 14px; /* Smaller font size */
+font-weight: bold;
+color: #333;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.2s ease;
+width: 140px; /* Adjust width to fit 8 rows on the page */
+text-align: center;
+box-shadow: 0px 0px 0px 2px #ddd; /* Stroke effect */
+}
+
+.controls button:hover {
+background-color: #eaeaea;
+transform: scale(1.05);
+}
+
+.controls button:active {
+background-color: #4CAF50; /* Change to desired active background color */
+color: white; /* Change text color for better contrast */
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); /* Add a shadow to indicate selection */
+transform: scale(1.05); /* Optional: slightly enlarge the button */
+}
+
+
+.controls button:focus {
+outline: none;
+border-color: #007bff;
+box-shadow: 0px 0px 0px 2px #007bff;
+}
+.controls button.active {
+background-color: #4CAF50; /* Change to desired active background color */
+color: white; /* Change text color for better contrast */
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); /* Add a shadow to indicate selection */
+transform: scale(1.05); /* Optional: slightly enlarge the button */
+}   
+
+
+
+.right-section {
+    flex: 1;
+    min-width: 500px;
+    box-sizing: border-box;
+}
+
+.left-section  {
+    flex: 1;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+
+
+.left-section {
+    order: 2; /* Changed order to move reminders to the left */
+}
+
+.right-section {
+    order: 1; /* Changed order to move the map to the right */
+}
+
+.reminders, .map {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.reminders:hover, .weather:hover, .map:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.reminders h2, .weather h2, .map h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #106c10;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0a550a;
+}
+
+.reminder-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reminder-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #106c10;
+}
+
+.reminder-item button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.reminder-item button:hover {
+    background-color: #c0392b;
+}
+
+.map {
+    text-align: center;
+}
+
+#weatherInfo {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+iframe {
+    border: 0;
+    border-radius: 15px;
+}
+
+
+svg {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+svg path {
+fill: #c7ffc1;
+stroke: #eee;
+stroke-width: .25;
+}
+svg path:hover {
+fill: #8ee3ff;
+transition: 0.6s;
+cursor: pointer;
+}

@@ -1,0 +1,199 @@
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light grey background */
+    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-size: 20px 20px; /* Adjust size of the dots */
+animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+header img {
+    width: 80px; /* Slightly smaller logo */
+    height: auto;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(45deg, #008000, #32cd32, #00bfff, #008000);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    color: white;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header div {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem; /* Larger font size for elegance */
+    font-weight: 600;
+    letter-spacing: 1px; /* Slightly increased letter spacing */
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #80ee80;
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Section - Grid Layout */
+.team {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+}
+.team-leader img {
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.team-leader {
+    text-align: center;
+}
+
+
+/* Member Containers */
+.members {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.member {
+background-color: #f9f9f9;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+text-align: center;
+opacity: 0;
+transform: translateX(-100%); /* Start from the left */
+animation: slideIn 0.5s forwards; /* Add slide-in animation */
+transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.member img {
+    border-radius: 8px;
+    width: 100px;
+    height: auto;
+}
+
+/* About Us and Contacts Containers */
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    opacity: 0;
+    transform: scale(0.8); /* Initially scaled down */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.about-purpose, .contacts {
+    background-color: #e9f5f5;
+    padding: 20px; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    width: 45%; /* Reduced width */
+}
+
+.contacts ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.contacts li {
+    padding: 5px 0;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1c1c1c;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes slideIn {
+from {
+transform: translateX(-100%);
+opacity: 0;
+}
+to {
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+/* Delay for each individual member */
+.member:nth-child(1) { animation-delay: 0.3s; }
+.member:nth-child(2) { animation-delay: 0.4s; }
+.member:nth-child(3) { animation-delay: 0.5s; }
+.member:nth-child(4) { animation-delay: 0.6s; }
+.member:nth-child(5) { animation-delay: 0.7s; }
+.member:nth-child(6) { animation-delay: 0.8s; }
+.member:nth-child(7) { animation-delay: 0.9s; }
+.member:nth-child(8) { animation-delay: 1s;}
+.member:nth-child(9) { animation-delay: 1.1s;}
+/* Add more delays for additional members as needed */
+
